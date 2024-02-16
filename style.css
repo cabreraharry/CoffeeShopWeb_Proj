@@ -1,15 +1,18 @@
-body {
+.bg-black {
     background-image: url(img/bg.jpg);
-    /* float: right; */
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-attachment: fixed
-    
+    background-attachment: fixed;
 }
 
-/* .logo {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+.top-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 50px;
+    z-index: 999;
+}
 
-} */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+}
