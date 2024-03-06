@@ -1,28 +1,27 @@
 .bg-black {
-    background-image: url(img/bg.jpg);
-    background-size: 100% auto;
+    background-color: #000;
+    background-image: url('img/bg.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-}
-
-.top-buttons {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 50px;
-    z-index: 999;
+    background-position: center;
 }
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency if needed */
+    justify-content: center; /* Center the contents horizontally */
 }
 
-.carousel-item {
-    background: transparent;
+.navbar-brand img {
+    max-height: 40px;
 }
 
-.border-warning {
-    border-color: yellow;
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.form-control {
+    width: 100%;
 }
 
 .card {
@@ -30,15 +29,13 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card-img-left {
-    width: 100px;
-    height: 100px;
+.card-img-top {
+    height: 200px;
     object-fit: cover;
-    float: left;
-    margin-right: 20px;
 }
 
-.form-control {
-    width: 300px;
-    
+@media (max-width: 576px) {
+    .navbar-toggler {
+        margin-right: 0;
+    }
 }
