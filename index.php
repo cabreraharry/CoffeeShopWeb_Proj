@@ -20,19 +20,19 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Menu</a>
+                    <a class="nav-link" href="menu.php">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Apps</a>
+                    <a class="nav-link" href="apps.php">Apps</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
             </ul>
         </div>
@@ -54,12 +54,16 @@
     </div>
 </div>
 
+<!-- "Popular Now" Message -->
+<div class="container mt-5">
+    <h2 class="text-center text-white mb-4">Popular Now</h2>
+</div>
+
 <!-- CAROUSEL -->
 <div id="coffeeCarousel" class="carousel slide bg-transparent border border-warning mt-5" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <div class="container mt-2 mb-3">
-                <h2 class="text-center text-white mb-4">Popular Now</h2> <!-- "Popular Now" Message -->
                 <div class="row justify-content-center">
                     <div class="col-lg-4">
                         <div class="card bg-dark text-white">
@@ -167,7 +171,6 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="<KEY>" crossorigin="anonymous"></script>
 </body>

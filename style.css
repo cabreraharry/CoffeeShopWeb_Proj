@@ -1,9 +1,12 @@
+/* style.css */
+
 .bg-black {
     background-color: #000;
     background-image: url('img/bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed; /* Fix background image */
 }
 
 .navbar {
@@ -38,4 +41,18 @@
     .navbar-toggler {
         margin-right: 0;
     }
+}
+
+.popular-message {
+    position: absolute;
+    top: 100px; /* Adjust position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; /* Ensure it's above other elements */
+    color: white;
+    font-size: 24px;
+}
+
+.carousel-container {
+    margin-top: 50px; /* Adjust as needed */
 }
