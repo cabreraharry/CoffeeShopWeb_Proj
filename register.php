@@ -15,6 +15,16 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="text-center mb-4">Register</h2>
+                    <?php if (isset($_GET['error'])): ?>
+                        <div class="alert alert-danger">
+                            <?php echo htmlspecialchars($_GET['error']); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (isset($_GET['success'])): ?>
+                        <div class="alert alert-success">
+                            <?php echo htmlspecialchars($_GET['success']); ?>
+                        </div>
+                    <?php endif; ?>
                     <form action="register_process.php" method="post">
                         <div class="mb-3">
                             <input type="text" name="first_name" class="form-control" placeholder="First Name" maxlength="50" required>

@@ -15,16 +15,26 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="text-center mb-4">Login</h2>
+                    <?php if (isset($_GET['error'])): ?>
+                        <div class="alert alert-danger">
+                            <?php echo htmlspecialchars($_GET['error']); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (isset($_GET['success'])): ?>
+                        <div class="alert alert-success">
+                            <?php echo htmlspecialchars($_GET['success']); ?>
+                        </div>
+                    <?php endif; ?>
                     <form action="login_process.php" method="post">
                         <div class="mb-3">
-                            <input type="text" name="username" class="form-control" placeholder="Username" required>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                         </div>
                         <div class="mb-3">
                             <input type="password" name="password" class="form-control" placeholder="Password" required>
                         </div>
                         <button type="submit" class="btn btn-warning btn-block">Login</button>
                     </form>
-                    <p class="mt-3 text-center">Don't have an account? <a href="register.php">Sign up here</a></p>
+                    <p class="mt-3 text-center">Don't have an account? <a href="register.php">Register here</a></p>
                 </div>
             </div>
         </div>

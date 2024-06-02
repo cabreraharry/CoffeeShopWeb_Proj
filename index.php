@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,8 +41,13 @@
             </ul>
         </div>
         <div class="ml-auto">
-            <a href="login.php" class="btn btn-outline-warning me-2">Log in</a>
-            <a href="register.php" class="btn btn-warning text-white">Sign Up</a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <span class="navbar-text text-white me-2">Welcome, <?php echo htmlspecialchars($_SESSION['email']); ?>!</span>
+                <a href="logout.php" class="btn btn-outline-warning me-2">Logout</a>
+            <?php else: ?>
+                <a href="login.php" class="btn btn-outline-warning me-2">Log in</a>
+                <a href="register.php" class="btn btn-warning text-white">Sign Up</a>
+            <?php endif; ?>
         </div>
     </div>
 </nav>

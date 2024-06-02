@@ -1,4 +1,5 @@
-tu<?php
+<?php
+require 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
@@ -9,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
+    // Validate input
     if (strlen($first_name) > 50 || strlen($last_name) > 50) {
         header("Location: register.php?error=First and last name should have max 50 characters");
         exit;
@@ -34,7 +36,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    header("Location: login.php?success=Registration successful. Please log in.");
+    // Hash password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // Insert user data into the database
+    $stmt = $conn->prepare("INSERT INTO users (first_name, last_name, email, mobile_number, password) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $first_name, $last_name, $email, $mobile_number, $hashed_password);
+
+    if ($stmt->execute()) {
+        header("Location: login.php?success=Registration successful. Please log in.");
+    } else {
+        header("Location: register.php?error=Error registering user. Please try again.");
+    }
+
+    $stmt->close();
+    $conn->close();
     exit;
 }
 ?>
